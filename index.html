@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoSort AI – Smart Waste Management System</title>
+  <meta name="description" content="EcoSort AI: Sort Smart. Recycle Better. Build a Greener Future. An Artificial Intelligence Mini Project for automated waste segregation, computer vision classification, and smart city analytics.">
+
+  <!-- Favicon (Clean Inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" aria-label="EcoSort AI Home">
+        <div class="logo-icon">
+          <i class="fa-solid fa-recycle"></i>
+          <span class="ai-spark"><i class="fa-solid fa-sparkles"></i></span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">EcoSort <span class="logo-highlight">AI</span></span>
+          <span class="logo-subtitle">Smart Waste Management</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#classifier" class="nav-link">AI Classifier</a></li>
+          <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+          <li><a href="#game" class="nav-link">Sorting Game</a></li>
+          <li><a href="#advantages" class="nav-link">Advantages</a></li>
+          <li><a href="#applications" class="nav-link">Applications</a></li>
+          <li><a href="#future-scope" class="nav-link">Future Scope</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action CTA -->
+      <div class="nav-actions">
+        <a href="#classifier" class="btn btn-sm btn-primary nav-cta">
+          <i class="fa-solid fa-brain"></i>
+          <span>Try Classifier</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="main-content">
+
+    <!-- 1. HOME / HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="hero-background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text"><i class="fa-solid fa-leaf"></i> AI-Powered Circular Economy Initiative</span>
+          </div>
+          <h1 class="hero-title">
+            EcoSort <span class="gradient-text">AI</span>
+            <span class="hero-title-sub">Smart Waste Management System</span>
+          </h1>
+          <p class="hero-tagline">Sort Smart. Recycle Better. Build a Greener Future.</p>
+          <p class="hero-description">
+            Revolutionizing municipal and industrial waste segregation through real-time Computer Vision and Deep Learning. 
+            Automate trash identification, eliminate landfill contamination, and accelerate global zero-waste goals with intelligent sorting.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#classifier" class="btn btn-lg btn-primary">
+              <i class="fa-solid fa-camera-viewfinder"></i> Try AI Classifier
+            </a>
+            <a href="#dashboard" class="btn btn-lg btn-outline">
+              <i class="fa-solid fa-chart-pie"></i> View Live Dashboard
+            </a>
+            <a href="#game" class="btn btn-lg btn-ghost">
+              <i class="fa-solid fa-gamepad"></i> Play Sorting Game
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-pill">
+              <span class="stat-num" data-counter="98.4">98.4%</span>
+              <span class="stat-label">Model Accuracy</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-pill">
+              <span class="stat-num" data-counter="5">5+</span>
+              <span class="stat-label">Waste Streams</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-pill">
+              <span class="stat-num">&lt; 0.3s</span>
+              <span class="stat-label">Inference Speed</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-pill">
+              <span class="stat-num" data-counter="45">45%</span>
+              <span class="stat-label">Cost Reduction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-display">
+            <!-- Simulated AI Vision Scanner Card -->
+            <div class="scanner-card">
+              <div class="scanner-header">
+                <span class="scanner-dot red"></span>
+                <span class="scanner-dot yellow"></span>
+                <span class="scanner-dot green"></span>
+                <span class="scanner-status"><i class="fa-solid fa-circle-dot pulse"></i> AI Vision Stream Active</span>
+              </div>
+              <div class="scanner-viewfinder">
+                <div class="scanner-laser"></div>
+                <div class="scanner-target-box">
+                  <div class="corner top-left"></div>
+                  <div class="corner top-right"></div>
+                  <div class="corner bottom-left"></div>
+                  <div class="corner bottom-right"></div>
+                  <div class="target-tag">
+                    <span class="tag-label">PLASTIC_BOTTLE (PET-1)</span>
+                    <span class="tag-confidence">98.8% CONF</span>
+                  </div>
+                </div>
+                <!-- Simulated Item Graphic -->
+                <div class="scanner-object">
+                  <i class="fa-solid fa-bottle-water object-icon"></i>
+                </div>
+              </div>
+              <div class="scanner-telemetry">
+                <div class="telemetry-item">
+                  <span class="t-label">Category</span>
+                  <span class="t-val text-accent"><i class="fa-solid fa-recycle"></i> Recyclable Plastic</span>
+                </div>
+                <div class="telemetry-item">
+                  <span class="t-label">Target Bin</span>
+                  <span class="t-val text-blue"><i class="fa-solid fa-trash-can"></i> Blue Bin (Chute #2)</span>
+                </div>
+                <div class="telemetry-item">
+                  <span class="t-label">Carbon Offset</span>
+                  <span class="t-val text-success">+0.14 kg CO₂e</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Micro Badges -->
+            <div class="floating-badge badge-top-right">
+              <i class="fa-solid fa-robot"></i>
+              <div>
+                <strong>CNN Architecture</strong>
+                <small>ResNet-50 / MobileNetV3</small>
+              </div>
+            </div>
+            <div class="floating-badge badge-bottom-left">
+              <i class="fa-solid fa-seedling text-success"></i>
+              <div>
+                <strong>Eco-Impact</strong>
+                <small>Zero Landfill Diversion</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i class="fa-solid fa-circle-info"></i> Project Overview</div>
+          <h2 class="section-title">Why AI-Powered Waste Management?</h2>
+          <p class="section-subtitle">
+            Traditional waste handling relies heavily on hazardous manual segregation and unsegregated dumping. 
+            EcoSort AI harnesses Computer Vision and IoT to automate segregation at the point of disposal.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card highlight-card">
+            <div class="card-icon"><i class="fa-solid fa-earth-americas"></i></div>
+            <h3>The Global Waste Crisis</h3>
+            <p>
+              Over <strong>2.01 billion metric tons</strong> of municipal solid waste is generated globally each year, with at least 33% 
+              mismanaged through open dumping or uncontrolled incineration. Traditional sorting facilities suffer from low efficiency, 
+              high worker health risks, and severe contamination rates that make recycling economically unviable.
+            </p>
+            <div class="crisis-pills">
+              <span><i class="fa-solid fa-triangle-exclamation"></i> 80% Unsorted Waste</span>
+              <span><i class="fa-solid fa-smog"></i> Methane Emissions</span>
+              <span><i class="fa-solid fa-water"></i> Marine Microplastics</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+            <h3>Importance of Segregation</h3>
+            <p>
+              Segregation at source is the single most critical factor in circular waste recovery. When organic matter mixes with paper or dry plastics, 
+              it degrades recyclable quality and creates hazardous leachate in landfills. Proper segregation turns waste into valuable raw material streams.
+            </p>
+            <ul class="feature-bullets">
+              <li><i class="fa-solid fa-check-circle"></i> Prevents recyclable contamination</li>
+              <li><i class="fa-solid fa-check-circle"></i> Maximizes high-grade compost recovery</li>
+              <li><i class="fa-solid fa-check-circle"></i> Lowers municipal disposal and hauling fees</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>The AI Revolution in Cleantech</h3>
+            <p>
+              EcoSort AI implements state-of-the-art Deep Learning models to identify waste items in fractions of a second. By combining 
+              optical imaging with pneumatic air actuators, it delivers autonomous sorting with <strong>over 95% purity</strong>, operating 
+              24/7 without human exposure to hazardous materials.
+            </p>
+            <ul class="feature-bullets">
+              <li><i class="fa-solid fa-check-circle"></i> Millisecond-level image classification</li>
+              <li><i class="fa-solid fa-check-circle"></i> Edge-device compatibility for smart bins</li>
+              <li><i class="fa-solid fa-check-circle"></i> Continuous model retraining on new waste items</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Comparison Table: Traditional vs AI Waste Management -->
+        <div class="comparison-container">
+          <h3 class="comparison-title text-center"><i class="fa-solid fa-scale-balanced"></i> Traditional vs. EcoSort AI Paradigm</h3>
+          <div class="table-responsive">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Evaluation Metric</th>
+                  <th class="col-traditional"><i class="fa-solid fa-circle-xmark"></i> Traditional Waste Management</th>
+                  <th class="col-ai"><i class="fa-solid fa-circle-check"></i> EcoSort AI Automated System</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sorting Accuracy</strong></td>
+                  <td class="text-danger">45% – 60% (High Human Error)</td>
+                  <td class="text-success font-semibold">95% – 99% (Deep Learning Precision)</td>
+                </tr>
+                <tr>
+                  <td><strong>Processing Speed</strong></td>
+                  <td>15 – 30 items per minute (Manual)</td>
+                  <td class="text-success font-semibold">120 – 300 items per minute (Optical / Actuator)</td>
+                </tr>
+                <tr>
+                  <td><strong>Worker Safety & Health</strong></td>
+                  <td class="text-danger">High exposure to sharps, pathogens & toxins</td>
+                  <td class="text-success font-semibold">Zero contact; fully automated hands-free enclosure</td>
+                </tr>
+                <tr>
+                  <td><strong>Contamination Rate</strong></td>
+                  <td class="text-danger">35% – 50% (Batches rejected at recycling plant)</td>
+                  <td class="text-success font-semibold">&lt; 5% (Clean, market-ready recyclable bales)</td>
+                </tr>
+                <tr>
+                  <td><strong>Real-Time Analytics</strong></td>
+                  <td>None; manual paper logs and estimated weigh-ins</td>
+                  <td class="text-success font-semibold">Cloud IoT telemetry, fill-level alerts, carbon tracking</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HOW IT WORKS SECTION -->
+    <section class="section how-it-works-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i class="fa-solid fa-gears"></i> System Architecture</div>
+          <h2 class="section-title">How EcoSort AI Works</h2>
+          <p class="section-subtitle">
+            An end-to-end intelligent pipeline integrating hardware sensors, edge computer vision, mechanical sorting, and cloud analytics.
+          </p>
+        </div>
+
+        <!-- Interactive Pipeline Steps -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-track"></div>
+          <div class="pipeline-grid">
+
+            <div class="pipeline-step active" data-step="1">
+              <div class="step-badge">1</div>
+              <div class="step-icon-wrap">
+                <i class="fa-solid fa-box-archive"></i>
+              </div>
+              <h3 class="step-title">1. Waste Deposit</h3>
+              <p class="step-desc">
+                Item is placed on the intake conveyor or inside the smart bin chamber. Ultrasonic and IR sensors detect object presence and trigger the camera.
+              </p>
+              <div class="step-tech"><i class="fa-solid fa-microchip"></i> Hardware: IR Distance Sensor</div>
+            </div>
+
+            <div class="pipeline-step" data-step="2">
+              <div class="step-badge">2</div>
+              <div class="step-icon-wrap">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+              <h3 class="step-title">2. Image Capture</h3>
+              <p class="step-desc">
+                High-resolution optical camera with diffuse LED illumination captures clear multi-angle images, neutralizing shadows and background clutter.
+              </p>
+              <div class="step-tech"><i class="fa-solid fa-camera-rotate"></i> Hardware: 1080p RGB Optical Sensor</div>
+            </div>
+
+            <div class="pipeline-step" data-step="3">
+              <div class="step-badge">3</div>
+              <div class="step-icon-wrap">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <h3 class="step-title">3. AI Classification</h3>
+              <p class="step-desc">
+                The image is preprocessed (224x224 RGB normalization) and passed through a Convolutional Neural Network (CNN) to predict material category and confidence score.
+              </p>
+              <div class="step-tech"><i class="fa-solid fa-brain"></i> Software: MobileNetV3 / ResNet-50</div>
+            </div>
+
+            <div class="pipeline-step" data-step="4">
+              <div class="step-badge">4</div>
+              <div class="step-icon-wrap">
+                <i class="fa-solid fa-arrows-split-up-and-left"></i>
+              </div>
+              <h3 class="step-title">4. Automated Chute</h3>
+              <p class="step-desc">
+                A microcontroller activates high-speed pneumatic air jets or servo-driven mechanical flappers to route the item into its designated bin.
+              </p>
+              <div class="step-tech"><i class="fa-solid fa-bolt"></i> Hardware: Pneumatic Solenoids / Servos</div>
+            </div>
+
+            <div class="pipeline-step" data-step="5">
+              <div class="step-badge">5</div>
+              <div class="step-icon-wrap">
+                <i class="fa-solid fa-recycle"></i>
+              </div>
+              <h3 class="step-title">5. Clean Recycling</h3>
+              <p class="step-desc">
+                Pure, uncontaminated waste streams are transferred directly to composting beds, paper pulp mills, or plastic reprocessing hubs.
+              </p>
+              <div class="step-tech"><i class="fa-solid fa-leaf"></i> Outcome: 98% Circular Material Yield</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Technical Specification Card -->
+        <div class="tech-spec-box">
+          <div class="spec-header">
+            <h4><i class="fa-solid fa-code"></i> AI Pipeline Flow & Input-Output Specifications</h4>
+            <span class="spec-badge">Inference: ~250ms</span>
+          </div>
+          <div class="spec-flow">
+            <div class="flow-node">
+              <span class="node-title">RAW INPUT</span>
+              <span class="node-desc">RGB Camera Feed (1920x1080)</span>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="flow-node">
+              <span class="node-title">PREPROCESSING</span>
+              <span class="node-desc">Crop, Resize (224x224), Normalization</span>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="flow-node highlight">
+              <span class="node-title">CNN FEATURE EXTRACTOR</span>
+              <span class="node-desc">Conv2D -> BatchNorm -> ReLU -> Softmax</span>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="flow-node">
+              <span class="node-title">ACTUATION TRIGGER</span>
+              <span class="node-desc">Chute Selector [Plastic | Paper | Glass | Metal | Organic]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. AI WASTE CLASSIFIER (Interactive Demonstration) -->
+    <section class="section classifier-section" id="classifier">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Live Demonstration</div>
+          <h2 class="section-title">AI Waste Classifier Demo</h2>
+          <p class="section-subtitle">
+            Experience real-time automated waste classification. Upload your own image or select from our sample waste library to see deep learning inference in action.
+          </p>
+        </div>
+
+        <!-- Academic Simulation Notice -->
+        <div class="demo-notice">
+          <i class="fa-solid fa-circle-info notice-icon"></i>
+          <div class="notice-content">
+            <strong>College Mini Project Demonstration Note:</strong>
+            <span>
+              This interactive module demonstrates the frontend user interface and inference logic of the EcoSort AI system. 
+              It simulates real-time Convolutional Neural Network predictions for Plastic, Paper, Metal, Glass, and Organic waste, 
+              complete with confidence scoring, bin allocation, and carbon footprint telemetry.
+            </span>
+          </div>
+        </div>
+
+        <div class="classifier-layout">
+          <!-- Left: Input & Preset Selector -->
+          <div class="classifier-input-panel">
+            <h3 class="panel-title"><i class="fa-solid fa-cloud-arrow-up"></i> Provide Waste Image</h3>
+
+            <!-- Drag and drop upload zone -->
+            <div class="upload-dropzone" id="dropZone">
+              <input type="file" id="wasteImageInput" accept="image/*" class="file-input-hidden">
+              <div class="dropzone-content">
+                <div class="dropzone-icon">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
+                <h4>Drag & Drop your image here</h4>
+                <p>or click to browse from device (JPG, PNG, WebP)</p>
+                <button type="button" class="btn btn-sm btn-outline" id="browseFileBtn">
+                  <i class="fa-solid fa-folder-open"></i> Browse Files
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Presets -->
+            <div class="preset-selector">
+              <label class="preset-label">Or test with quick sample items:</label>
+              <div class="preset-buttons-grid">
+                <button type="button" class="preset-btn active" data-preset="plastic-bottle">
+                  <i class="fa-solid fa-bottle-water"></i> Plastic Bottle
+                </button>
+                <button type="button" class="preset-btn" data-preset="apple-core">
+                  <i class="fa-solid fa-apple-whole"></i> Apple Core
+                </button>
+                <button type="button" class="preset-btn" data-preset="soda-can">
+                  <i class="fa-solid fa-can-food"></i> Soda Can
+                </button>
+                <button type="button" class="preset-btn" data-preset="cardboard-box">
+                  <i class="fa-solid fa-box"></i> Cardboard Box
+                </button>
+                <button type="button" class="preset-btn" data-preset="glass-jar">
+                  <i class="fa-solid fa-wine-bottle"></i> Glass Jar
+                </button>
+                <button type="button" class="preset-btn" data-preset="battery">
+                  <i class="fa-solid fa-battery-half"></i> Li-ion Battery
+                </button>
+              </div>
+            </div>
+
+            <!-- Control Actions -->
+            <div class="classifier-actions">
+              <button type="button" class="btn btn-primary btn-block" id="runClassifierBtn">
+                <i class="fa-solid fa-sparkles"></i> Run AI Classification
+              </button>
+              <button type="button" class="btn btn-ghost btn-block" id="resetClassifierBtn">
+                <i class="fa-solid fa-arrow-rotate-left"></i> Reset Scanner
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Visualizer & Inference Output -->
+          <div class="classifier-output-panel">
+            <h3 class="panel-title"><i class="fa-solid fa-microchip"></i> Neural Network Inference Output</h3>
+
+            <!-- Scanner Viewport -->
+            <div class="classifier-preview-box" id="previewBox">
+              <div class="preview-overlay" id="scannerOverlay">
+                <div class="laser-scanner"></div>
+                <div class="scan-grid"></div>
+                <div class="scanning-text" id="scanningText"><i class="fa-solid fa-spinner fa-spin"></i> Analyzing Image Features...</div>
+              </div>
+
+              <!-- Main Preview Image / Graphic -->
+              <div class="preview-stage" id="previewStage">
+                <img id="previewImage" src="" alt="Waste Item Preview" class="preview-img hidden">
+                <div id="previewFallbackGraphic" class="preview-graphic">
+                  <i class="fa-solid fa-bottle-water" id="previewIcon"></i>
+                  <span id="previewFallbackName">Plastic Water Bottle (PET-1)</span>
+                </div>
+              </div>
+
+              <div class="preview-badge" id="previewBadge">
+                <i class="fa-solid fa-shield-check"></i> Quality Check Passed
+              </div>
+            </div>
+
+            <!-- Results Card -->
+            <div class="classification-result-card" id="resultCard">
+              <div class="result-header">
+                <div>
+                  <span class="result-category-badge" id="resultCategoryBadge">PLASTIC WASTE</span>
+                  <h4 class="result-name" id="resultItemName">Clear Beverage Bottle (PET-1)</h4>
+                </div>
+                <div class="confidence-display">
+                  <span class="confidence-value" id="resultConfidence">98.4%</span>
+                  <span class="confidence-label">Confidence</span>
+                </div>
+              </div>
+
+              <!-- Confidence Progress Bar -->
+              <div class="confidence-meter-container">
+                <div class="meter-bar">
+                  <div class="meter-fill" id="confidenceBar" style="width: 98.4%;"></div>
+                </div>
+              </div>
+
+              <!-- Prediction Breakdown -->
+              <div class="probabilities-grid">
+                <div class="prob-item">
+                  <span class="prob-label">Plastic</span>
+                  <div class="mini-bar"><div class="mini-fill" id="probPlastic" style="width: 98.4%;"></div></div>
+                  <span class="prob-val" id="valPlastic">98.4%</span>
+                </div>
+                <div class="prob-item">
+                  <span class="prob-label">Metal</span>
+                  <div class="mini-bar"><div class="mini-fill" id="probMetal" style="width: 1.1%;"></div></div>
+                  <span class="prob-val" id="valMetal">1.1%</span>
+                </div>
+                <div class="prob-item">
+                  <span class="prob-label">Paper</span>
+                  <div class="mini-bar"><div class="mini-fill" id="probPaper" style="width: 0.3%;"></div></div>
+                  <span class="prob-val" id="valPaper">0.3%</span>
+                </div>
+                <div class="prob-item">
+                  <span class="prob-label">Organic</span>
+                  <div class="mini-bar"><div class="mini-fill" id="probOrganic" style="width: 0.2%;"></div></div>
+                  <span class="prob-val" id="valOrganic">0.2%</span>
+                </div>
+              </div>
+
+              <!-- Bin Disposal & Environmental Advice -->
+              <div class="disposal-instructions">
+                <div class="instruction-box" id="binBox">
+                  <div class="inst-icon"><i class="fa-solid fa-trash-can" id="binIcon"></i></div>
+                  <div class="inst-text">
+                    <strong id="binName">Designated: Blue Bin (Dry Recyclables)</strong>
+                    <p id="binInstructions">Rinse bottle thoroughly. Flatten to compress space. Leave cap loose or remove per local guideline.</p>
+                  </div>
+                </div>
+                <div class="eco-impact-box">
+                  <i class="fa-solid fa-leaf text-success"></i>
+                  <span id="ecoImpactText">Recycling this item prevents 0.12kg of CO₂ emissions and conserves 1.5L of water.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SMART DASHBOARD SECTION -->
+    <section class="section dashboard-section" id="dashboard">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i class="fa-solid fa-chart-line"></i> Analytics & Telemetry</div>
+          <h2 class="section-title">Smart City Waste Dashboard</h2>
+          <p class="section-subtitle">
+            Real-time IoT telemetry capturing municipal sorting volumes, recycling rates, material distributions, and carbon offset metrics.
+          </p>
+        </div>
+
+        <!-- Dashboard Controls / Time Filter -->
+        <div class="dashboard-toolbar">
+          <div class="dashboard-status">
+            <span class="status-indicator"></span>
+            <span>Live Stream: <strong>Campus Smart Node #04</strong></span>
+            <span class="timestamp-badge" id="dashTimestamp">Updated Just Now</span>
+          </div>
+          <div class="timeframe-selector">
+            <button class="time-tab active" data-timeframe="today">Today</button>
+            <button class="time-tab" data-timeframe="week">This Week</button>
+            <button class="time-tab" data-timeframe="month">This Month</button>
+            <button class="time-tab" data-timeframe="all">All-Time</button>
+          </div>
+        </div>
+
+        <!-- Key Metrics KPI Cards -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon bg-green-light">
+              <i class="fa-solid fa-weight-hanging text-primary"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Total Waste Collected</span>
+              <h3 class="metric-number" id="metricTotal">1,480 <small>kg</small></h3>
+              <span class="metric-trend text-success"><i class="fa-solid fa-arrow-trend-up"></i> +12.4% vs last period</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon bg-blue-light">
+              <i class="fa-solid fa-recycle text-blue"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Recycled Materials</span>
+              <h3 class="metric-number" id="metricRecycled">1,160 <small>kg</small></h3>
+              <span class="metric-trend text-success"><i class="fa-solid fa-circle-check"></i> High Purity Bales</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon bg-emerald-light">
+              <i class="fa-solid fa-seedling text-success"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Organic / Composted</span>
+              <h3 class="metric-number" id="metricOrganic">520 <small>kg</small></h3>
+              <span class="metric-trend text-muted"><i class="fa-solid fa-clock"></i> In aerated bio-digester</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon bg-amber-light">
+              <i class="fa-solid fa-bottle-water text-warning"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Plastic Recovered</span>
+              <h3 class="metric-number" id="metricPlastic">440 <small>kg</small></h3>
+              <span class="metric-trend text-success"><i class="fa-solid fa-shield-halved"></i> 100% Diverted</span>
+            </div>
+          </div>
+
+          <div class="metric-card highlight-metric">
+            <div class="metric-icon bg-white-trans">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-label">Diversion / Recycling Rate</span>
+              <h3 class="metric-number" id="metricRate">78.4%</h3>
+              <span class="metric-trend"><i class="fa-solid fa-award"></i> Goal: &gt;75% Achieved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Grid (Chart.js) -->
+        <div class="dashboard-charts-grid">
+          <!-- Chart 1: Composition Doughnut -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h4 class="chart-title">Waste Composition Breakdown</h4>
+                <p class="chart-subtitle">Distribution by categorized material stream</p>
+              </div>
+              <span class="chart-badge">Volume %</span>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="compositionChart"></canvas>
+            </div>
+            <div class="chart-legend-custom">
+              <span class="legend-chip"><i class="fa-solid fa-circle" style="color: #2d6a4f;"></i> Plastic (32%)</span>
+              <span class="legend-chip"><i class="fa-solid fa-circle" style="color: #52b788;"></i> Organic (28%)</span>
+              <span class="legend-chip"><i class="fa-solid fa-circle" style="color: #74c69d;"></i> Paper (20%)</span>
+              <span class="legend-chip"><i class="fa-solid fa-circle" style="color: #b7e4c7;"></i> Metal (12%)</span>
+              <span class="legend-chip"><i class="fa-solid fa-circle" style="color: #40916c;"></i> Glass (8%)</span>
+            </div>
+          </div>
+
+          <!-- Chart 2: Collection & Segregation Trends -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h4 class="chart-title">Daily Collection vs. Segregation Efficiency</h4>
+                <p class="chart-subtitle">Comparison of total waste inflow against cleanly diverted streams</p>
+              </div>
+              <span class="chart-badge">Kilograms</span>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="trendChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Bins Real-Time Fill Levels -->
+        <div class="bins-status-wrapper">
+          <h4 class="bins-title"><i class="fa-solid fa-tower-broadcast"></i> IoT Ultrasonic Bin Fill Levels (Physical Node #04)</h4>
+          <div class="bins-grid">
+            <div class="bin-gauge-item">
+              <div class="bin-gauge-header">
+                <span><i class="fa-solid fa-bottle-water text-primary"></i> Plastic Bin</span>
+                <strong class="text-primary">68%</strong>
+              </div>
+              <div class="bin-progress-track">
+                <div class="bin-progress-bar" style="width: 68%; background: #2d6a4f;"></div>
+              </div>
+              <small class="bin-status-note">Normal Capacity (Emptying in 4 hrs)</small>
+            </div>
+
+            <div class="bin-gauge-item">
+              <div class="bin-gauge-header">
+                <span><i class="fa-solid fa-apple-whole text-success"></i> Organic Bin</span>
+                <strong class="text-success">84%</strong>
+              </div>
+              <div class="bin-progress-track">
+                <div class="bin-progress-bar" style="width: 84%; background: #52b788;"></div>
+              </div>
+              <small class="bin-status-note text-warning">Pickup Scheduled Soon</small>
+            </div>
+
+            <div class="bin-gauge-item">
+              <div class="bin-gauge-header">
+                <span><i class="fa-solid fa-newspaper text-info"></i> Paper Bin</span>
+                <strong class="text-info">42%</strong>
+              </div>
+              <div class="bin-progress-track">
+                <div class="bin-progress-bar" style="width: 42%; background: #3a86ff;"></div>
+              </div>
+              <small class="bin-status-note">Adequate Capacity</small>
+            </div>
+
+            <div class="bin-gauge-item">
+              <div class="bin-gauge-header">
+                <span><i class="fa-solid fa-can-food text-warning"></i> Metal / Cans</span>
+                <strong class="text-warning">29%</strong>
+              </div>
+              <div class="bin-progress-track">
+                <div class="bin-progress-bar" style="width: 29%; background: #e09f3e;"></div>
+              </div>
+              <small class="bin-status-note">Low Fill Level</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. WASTE SORTING GAME SECTION -->
+    <section class="section game-section" id="game">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i class="fa-solid fa-gamepad"></i> Gamified Learning</div>
+          <h2 class="section-title">EcoHero: Waste Sorting Challenge</h2>
+          <p class="section-subtitle">
+            Test your waste segregation knowledge! Match each item with its correct category before the timer runs out. 
+            Can you beat the EcoSort AI sorting score?
+          </p>
+        </div>
+
+        <div class="game-container">
+          <!-- Game Score Header -->
+          <div class="game-scoreboard">
+            <div class="score-item">
+              <span class="s-label">Score</span>
+              <strong class="s-val text-success" id="gameScore">0</strong>
+            </div>
+            <div class="score-item">
+              <span class="s-label">Streak</span>
+              <strong class="s-val text-primary" id="gameStreak">0 🔥</strong>
+            </div>
+            <div class="score-item">
+              <span class="s-label">Question</span>
+              <strong class="s-val" id="gameQuestionCount">1 / 10</strong>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline" id="gameRestartBtn">
+              <i class="fa-solid fa-rotate-right"></i> Restart Game
+            </button>
+          </div>
+
+          <!-- Active Question Card -->
+          <div class="game-card" id="gameCard">
+            <div class="game-item-display">
+              <div class="item-visual-box" id="gameItemBox">
+                <i class="fa-solid fa-apple-whole" id="gameItemIcon"></i>
+              </div>
+              <h3 class="game-item-title" id="gameItemTitle">Banana Peel & Fruit Scraps</h3>
+              <p class="game-item-hint" id="gameItemHint">Common kitchen residue left after food consumption.</p>
+            </div>
+
+            <!-- Category Choice Buttons -->
+            <div class="game-choices-grid" id="gameChoices">
+              <button type="button" class="choice-btn" data-category="organic">
+                <i class="fa-solid fa-apple-whole"></i>
+                <span>Organic / Wet Waste</span>
+              </button>
+              <button type="button" class="choice-btn" data-category="plastic">
+                <i class="fa-solid fa-bottle-water"></i>
+                <span>Plastic Waste</span>
+              </button>
+              <button type="button" class="choice-btn" data-category="paper">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Paper & Cardboard</span>
+              </button>
+              <button type="button" class="choice-btn" data-category="metal">
+                <i class="fa-solid fa-can-food"></i>
+                <span>Metal & Cans</span>
+              </button>
+              <button type="button" class="choice-btn" data-category="glass">
+                <i class="fa-solid fa-wine-bottle"></i>
+                <span>Glass Bottles</span>
+              </button>
+              <button type="button" class="choice-btn" data-category="hazardous">
+                <i class="fa-solid fa-battery-half"></i>
+                <span>E-Waste / Hazardous</span>
+              </button>
+            </div>
+
+            <!-- Feedback Banner (Hidden by default) -->
+            <div class="game-feedback-banner hidden" id="gameFeedback">
+              <div class="feedback-icon" id="feedbackIcon"><i class="fa-solid fa-check"></i></div>
+              <div class="feedback-text">
+                <h4 id="feedbackTitle">Spot on!</h4>
+                <p id="feedbackExplanation">Organic waste breaks down naturally into nutrient-rich compost, preventing methane generation in landfills.</p>
+              </div>
+              <button type="button" class="btn btn-primary" id="gameNextBtn">
+                <span>Next Item</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Game Over Modal / State (Hidden) -->
+          <div class="game-over-panel hidden" id="gameOverPanel">
+            <div class="trophy-icon"><i class="fa-solid fa-trophy"></i></div>
+            <h3>Challenge Complete!</h3>
+            <p>You scored <strong id="finalScore" class="text-success">80</strong> points!</p>
+            <p id="finalFeedbackMsg" class="final-msg">Outstanding! You have the environmental precision of an AI neural network!</p>
+            <button type="button" class="btn btn-primary" id="playAgainBtn">
+              <i class="fa-solid fa-rotate-right"></i> Play Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ADVANTAGES SECTION -->
+    <section class="section advantages-section" id="advantages">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i class="fa-solid fa-thumbs-up"></i> Key Strengths</div>
+          <h2 class="section-title">Advantages of EcoSort AI</h2>
+          <p class="section-subtitle">
+            Harnessing intelligent automation delivers substantial ecological, financial, and societal benefits compared to legacy disposal systems.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="feature-card">
+            <div class="f-icon bg-green-light"><i class="fa-solid fa-tree text-primary"></i></div>
+            <h3>Environmental Protection</h3>
+            <p>
+              Diverts thousands of metric tons of recyclable polymers and compostables from overflowing municipal landfills, significantly mitigating toxic leachate ground pollution.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="f-icon bg-emerald-light"><i class="fa-solid fa-cloud-arrow-down text-success"></i></div>
+            <h3>Reduced Greenhouse Emissions</h3>
+            <p>
+              Segregating organic wet waste prevents anaerobic decomposition in landfills, reducing dangerous atmospheric methane (CH₄) emissions by up to 60%.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="f-icon bg-blue-light"><i class="fa-solid fa-arrows-spin text-blue"></i></div>
+            <h3>Unprecedented Recycling Efficiency</h3>
+            <p>
+              Reduces contamination rates to below 5%, allowing recycling plants to convert pure bales directly into high-value secondary raw materials without costly manual re-sorting.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="f-icon bg-amber-light"><i class="fa-solid fa-cubes text-warning"></i></div>
+            <h3>Resource Conservation</h3>
+            <p>
+              Reclaims scarce raw materials—including petroleum resin for plastics, wood pulp for paper, and bauxite for aluminum—minimizing virgin resource extraction.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="f-icon bg-purple-light"><i class="fa-solid fa-shield-virus text-purple"></i></div>
+            <h3>Occupational Safety</h3>
+            <p>
+              Replaces perilous manual hand-picking with robotic sorting, safeguarding sanitation workers from accidental needle sticks, sharp broken glass, and biohazards.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="f-icon bg-teal-light"><i class="fa-solid fa-city text-teal"></i></div>
+            <h3>Cleaner, Smarter Cities</h3>
+            <p>
+              Enables data-driven waste management. Real-time fill sensors ensure trash bins are emptied only when needed, reducing municipal truck fuel consumption and traffic congestion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. DISADVANTAGES & TECHNICAL LIMITATIONS SECTION -->
+    <section class="section disadvantages-section" id="disadvantages">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag section-tag-warning"><i class="fa-solid fa-triangle-exclamation"></i> Realistic Assessment</div>
+          <h2 class="section-title">Technical Challenges & Limitations</h2>
+          <p class="section-subtitle">
+            An honest, academic engineering evaluation of the current obstacles faced when deploying automated AI waste management systems in real-world environments.
+          </p>
+        </div>
+
+        <div class="challenges-grid">
+          <div class="challenge-card">
+            <div class="c-num">01</div>
+            <div class="c-content">
+              <h4>High Initial Capital Investment (CapEx)</h4>
+              <p>
+                Equipping municipal bins and sorting facilities with industrial-grade cameras, embedded edge processors (e.g., NVIDIA Jetson), pneumatic actuators, and ruggedized sensors demands higher initial expenditure than static conventional bins.
+              </p>
+            </div>
+          </div>
+
+          <div class="challenge-card">
+            <div class="c-num">02</div>
+            <div class="c-content">
+              <h4>Sensor Contamination & Harsh Maintenance</h4>
+              <p>
+                In high-volume public environments, dust, liquid splatters, and food oils quickly coat optical camera lenses and sensor glass, demanding automated self-cleaning wipers or regular routine human maintenance.
+              </p>
+            </div>
+          </div>
+
+          <div class="challenge-card">
+            <div class="c-num">03</div>
+            <div class="c-content">
+              <h4>Complex Multi-Material Classification Errors</h4>
+              <p>
+                Objects such as wax-coated coffee cups, foil-lined chip bags, Tetra Paks, or heavily crushed and obscured trash can confuse standard RGB optical models, occasionally requiring expensive hyperspectral or X-ray sensors.
+              </p>
+            </div>
+          </div>
+
+          <div class="challenge-card">
+            <div class="c-num">04</div>
+            <div class="c-content">
+              <h4>Continuous Electricity & Connectivity Demands</h4>
+              <p>
+                Automated actuation and continuous edge inference require stable power grids or solar-battery arrays. Remote rural installations with intermittent power or no network access can experience downtime.
+              </p>
+            </div>
+          </div>
+
+          <div class="challenge-card">
+            <div class="c-num">05</div>
+            <div class="c-content">
+              <h4>Volumetric Mechanical Bottlenecks</h4>
+              <p>
+                Unlike a simple open dumpster that accepts oversized items instantaneously, automated sorting chambers have dimensional constraints and require items to enter individually to allow single-item camera recognition.
+              </p>
+            </div>
+          </div>
+
+          <div class="challenge-card">
+            <div class="c-num">06</div>
+            <div class="c-content">
+              <h4>Public Compliance & Behavioral Variability</h4>
+              <p>
+                Users jamming overflowing trash bags into intake slots or improperly forcing electronic batteries into general chutes can trigger mechanical stalls, requiring built-in fail-safe jams and rejection traps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. APPLICATIONS SECTION -->
+    <section class="section applications-section" id="applications">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i class="fa-solid fa-briefcase"></i> Deployment Scenarios</div>
+          <h2 class="section-title">Real-World Applications</h2>
+          <p class="section-subtitle">
+            From smart municipal districts to bustling university campuses, discover where EcoSort AI creates immediate environmental and economic value.
+          </p>
+        </div>
+
+        <div class="apps-grid">
+          <div class="app-card">
+            <div class="app-img-wrap">
+              <div class="app-icon-badge"><i class="fa-solid fa-city"></i></div>
+            </div>
+            <div class="app-body">
+              <h3>Smart Municipal Cities</h3>
+              <p>
+                Centralized Materials Recovery Facilities (MRFs) sorting municipal collection trucks at speeds exceeding 300 picks per minute, routing cleanly to recyclers.
+              </p>
+              <ul class="app-list">
+                <li><i class="fa-solid fa-circle-check"></i> Automated conveyor belt optical sorting</li>
+                <li><i class="fa-solid fa-circle-check"></i> City-wide collection truck fleet dispatch</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <div class="app-img-wrap">
+              <div class="app-icon-badge"><i class="fa-solid fa-graduation-cap"></i></div>
+            </div>
+            <div class="app-body">
+              <h3>Schools, Colleges & Universities</h3>
+              <p>
+                Campus cafeterias, dormitories, and lecture halls utilizing AI smart bins to educate students, achieve zero-waste campus certifications, and collect clean compost.
+              </p>
+              <ul class="app-list">
+                <li><i class="fa-solid fa-circle-check"></i> Interactive touchscreen student feedback</li>
+                <li><i class="fa-solid fa-circle-check"></i> Cafeteria organic food waste diversion</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <div class="app-img-wrap">
+              <div class="app-icon-badge"><i class="fa-solid fa-industry"></i></div>
+            </div>
+            <div class="app-body">
+              <h3>Industrial Zones & Warehouses</h3>
+              <p>
+                Large logistics distribution centers and factories sorting massive volumes of corrugated cardboard, stretch film polymers, wooden pallets, and scrap metal.
+              </p>
+              <ul class="app-list">
+                <li><i class="fa-solid fa-circle-check"></i> High-volume automated cardboard baling</li>
+                <li><i class="fa-solid fa-circle-check"></i> Scrap metal recovery & salvage resale</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <div class="app-img-wrap">
+              <div class="app-icon-badge"><i class="fa-solid fa-hospital"></i></div>
+            </div>
+            <div class="app-body">
+              <h3>Hospitals & Healthcare Centers</h3>
+              <p>
+                Rigorous segregation between general non-hazardous waste (paper, cafeteria plastics) and regulated clinical or infectious waste requiring incineration.
+              </p>
+              <ul class="app-list">
+                <li><i class="fa-solid fa-circle-check"></i> Strict biohazard containment validation</li>
+                <li><i class="fa-solid fa-circle-check"></i> Non-contact touchless waste disposal</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <div class="app-img-wrap">
+              <div class="app-icon-badge"><i class="fa-solid fa-plane-departure"></i></div>
+            </div>
+            <div class="app-body">
+              <h3>Airports & Transit Terminals</h3>
+              <p>
+                High-footfall transport hubs processing hundreds of thousands of disposable coffee cups, food trays, and beverage bottles around the clock.
+              </p>
+              <ul class="app-list">
+                <li><i class="fa-solid fa-circle-check"></i> 24/7 continuous autonomous operation</li>
+                <li><i class="fa-solid fa-circle-check"></i> Instant multi-language passenger prompts</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <div class="app-img-wrap">
+              <div class="app-icon-badge"><i class="fa-solid fa-store"></i></div>
+            </div>
+            <div class="app-body">
+              <h3>Shopping Malls & Public Parks</h3>
+              <p>
+                Compact smart solar bins installed along public promenades, compacting trash internally to multiply capacity fivefold and sorting on the fly.
+              </p>
+              <ul class="app-list">
+                <li><i class="fa-solid fa-circle-check"></i> Solar-powered internal waste compaction</li>
+                <li><i class="fa-solid fa-circle-check"></i> Odor-sealed automated trapdoor chambers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FUTURE SCOPE SECTION -->
+    <section class="section future-section" id="future-scope">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i class="fa-solid fa-rocket"></i> Horizon 2030</div>
+          <h2 class="section-title">Future Scope & Innovations</h2>
+          <p class="section-subtitle">
+            Exploring the next technological frontiers that will redefine autonomous waste segregation, robotics, and circular materials tracking.
+          </p>
+        </div>
+
+        <div class="future-timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-phase">Near-Term (1 - 2 Years)</span>
+              <h3>High-Speed Delta Robotic Sorting Arms</h3>
+              <p>
+                Integration of multi-axis delta robots equipped with pneumatic suction cups and soft silicone grippers capable of executing up to <strong>120 precision picks per minute</strong> directly from fast-moving industrial conveyor lines.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-phase">Medium-Term (2 - 3 Years)</span>
+              <h3>Self-Sustaining Solar IoT Smart Compactor Bins</h3>
+              <p>
+                Decentralized outdoor public bins powered entirely by integrated photovoltaic roof tiles. Featuring automated internal hydraulic compactors that increase storage capacity by 500% and cellular IoT telemetry for optimal collection routing.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-phase">Advanced Vision (3 - 4 Years)</span>
+              <h3>Hyperspectral & Short-Wave Infrared (SWIR) Sensing</h3>
+              <p>
+                Transcending standard RGB cameras by using near-infrared reflectance spectroscopy to instantly distinguish between visually identical polymers: distinguishing PET from HDPE, PP, PVC, and biodegradable bioplastics even when black or dirty.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-link"></i>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-phase">Ecosystem (4 - 5 Years)</span>
+              <h3>Blockchain-Based "Deposit-Return" Token Economy</h3>
+              <p>
+                Citizens scan their digital identity at smart bins upon depositing recyclables. Smart contracts automatically issue micro-rewards and recycling carbon credits into their digital wallets, turning sustainability into a rewarding habit.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-phase">Autonomous Facilities (5+ Years)</span>
+              <h3>Fully Dark Autonomous Recycling Hubs (Lights-Out MRFs)</h3>
+              <p>
+                Next-generation zero-human municipal recovery centers where autonomous guided vehicles (AGVs), drone overhead scouts, and swarm AI sorters run completely unassisted 24 hours a day with zero artificial lighting required.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. CONCLUSION SECTION -->
+    <section class="section conclusion-section" id="conclusion">
+      <div class="container">
+        <div class="conclusion-card">
+          <div class="conclusion-icon">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h2 class="conclusion-title">The Path Forward: Transforming Waste into Value</h2>
+          <p class="conclusion-text">
+            Waste is not an inevitable dead-end; it is simply a raw material in the wrong place. 
+            By uniting <strong>Artificial Intelligence, Edge Computer Vision, and Automated Robotics</strong>, 
+            <strong>EcoSort AI</strong> bridges the critical gap between waste generation and sustainable circular recovery.
+          </p>
+          <p class="conclusion-text">
+            Through real-time classification, elimination of landfill contamination, and data-driven municipal insights, 
+            intelligent waste management has evolved from an academic concept into an urgent, scalable solution for our planet's future.
+          </p>
+
+          <div class="conclusion-quote">
+            <blockquote>
+              "The greatest threat to our planet is the belief that someone else will save it. With AI, we turn every waste bin into a catalyst for global environmental change."
+            </blockquote>
+          </div>
+
+          <div class="conclusion-pills">
+            <div class="pill-item"><i class="fa-solid fa-check"></i> Circular Economy Ready</div>
+            <div class="pill-item"><i class="fa-solid fa-check"></i> Scalable Edge Architecture</div>
+            <div class="pill-item"><i class="fa-solid fa-check"></i> Measurable Carbon Reduction</div>
+          </div>
+
+          <div class="conclusion-cta">
+            <a href="#classifier" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-camera-retro"></i> Test the AI Classifier Again
+            </a>
+            <a href="#home" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-arrow-up"></i> Return to Top
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 12. FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <i class="fa-solid fa-recycle"></i>
+            </div>
+            <div class="logo-text">
+              <span class="logo-title text-white">EcoSort <span class="logo-highlight">AI</span></span>
+              <span class="logo-subtitle text-muted">Smart Waste Management System</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Sort Smart. Recycle Better. Build a Greener Future.</p>
+          <div class="academic-tag">
+            <i class="fa-solid fa-graduation-cap"></i> Artificial Intelligence Mini Project
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Quick Navigation</h4>
+          <ul>
+            <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Project</a></li>
+            <li><a href="#how-it-works"><i class="fa-solid fa-chevron-right"></i> System Architecture</a></li>
+            <li><a href="#classifier"><i class="fa-solid fa-chevron-right"></i> AI Classifier Demo</a></li>
+            <li><a href="#dashboard"><i class="fa-solid fa-chevron-right"></i> Smart Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Project Modules</h4>
+          <ul>
+            <li><a href="#game"><i class="fa-solid fa-chevron-right"></i> Sorting Game</a></li>
+            <li><a href="#advantages"><i class="fa-solid fa-chevron-right"></i> Advantages</a></li>
+            <li><a href="#disadvantages"><i class="fa-solid fa-chevron-right"></i> Limitations</a></li>
+            <li><a href="#applications"><i class="fa-solid fa-chevron-right"></i> Applications</a></li>
+            <li><a href="#future-scope"><i class="fa-solid fa-chevron-right"></i> Future Scope</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-project-info">
+          <h4>Project Specifications</h4>
+          <ul class="spec-list">
+            <li><strong>Domain:</strong> Computer Vision & Deep Learning</li>
+            <li><strong>Technologies:</strong> HTML5, CSS3, JavaScript (ES6+), Chart.js</li>
+            <li><strong>Model Architecture:</strong> CNN (Convolutional Neural Network)</li>
+            <li><strong>Target Categories:</strong> Plastic, Paper, Metal, Glass, Organic</li>
+            <li><strong>Status:</strong> Academic Prototype / Ready for Evaluation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright-text">
+          <p>&copy; <span id="currentYear">2025</span> <strong>EcoSort AI</strong>. Developed for Artificial Intelligence Mini Project Examination.</p>
+          <p class="academic-disclaimer">Designed for educational, laboratory, and research demonstration purposes.</p>
+        </div>
+        <div class="footer-badges">
+          <span class="footer-badge"><i class="fa-solid fa-shield-halved"></i> 100% Client-Side Demo</span>
+          <span class="footer-badge"><i class="fa-solid fa-seedling"></i> Green Tech AI</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Element -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-circle-check toast-icon" id="toastIcon"></i>
+    <span class="toast-message" id="toastMessage">Action completed successfully</span>
+  </div>
+
+  <!-- Chart.js CDN for Interactive Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Main JavaScript Application Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
